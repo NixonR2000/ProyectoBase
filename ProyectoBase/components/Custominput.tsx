@@ -39,9 +39,10 @@ const handleOnChange = (text: string) =>{
                 />
                 {
                     secureTextEntry && (
-                        <TouchableOpacity onPress={()=>{setIsPasswordVisible(!isPasswordVisible)}}>
-                            <Ionicons name={isPasswordVisible ? 'eye-off' : 'eye'} size={20} />
-                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} style={styles.icon}>
+    <Ionicons name={isPasswordVisible ? 'eye-off' : 'eye'} size={20} />
+</TouchableOpacity>
+
                     )
                 }
             </View>
@@ -50,12 +51,13 @@ const handleOnChange = (text: string) =>{
 }
 
 const styles = StyleSheet.create({
-    container: {margin: 15},
-    label: {fontSize: 16, fontWeight:'bold', marginBottom: 5},
-    inputContainer: {flexDirection:'row', alignItems:'center', width:250},
-    input: {flex:1, height:40, borderWidth: 1, borderColor:'#fff', borderRadius: 5},
-    inputError: {borderColor: 'red'},
-    icon: {marginLeft: 10},
-})
+    container: { margin: 15 },
+    label: { fontSize: 16, fontWeight: 'bold', marginBottom: 5 },
+    inputContainer: { flexDirection: 'row', alignItems: 'center', width: 250 },
+    input: { flex: 1, height: 40, borderWidth: 1, borderColor: '#ccc', borderRadius: 5, paddingHorizontal: 10 },
+    inputError: { borderColor: 'red' },
+    icon: { marginLeft: 10 }  // Asegura un espacio entre el input y el icono
+});
+
 
 export default CustomInput;

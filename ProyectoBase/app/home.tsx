@@ -5,33 +5,32 @@ import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
-const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <View style={styles.container}>
            <View style={styles.content}>
-            <CustomInput 
-                label="Correo Electronico"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                validationRule={(text)=>text.includes('@')}
-                errorMessage ="Correo invalido"
-            />
+                <CustomInput 
+                    label="Correo Electrónico"
+                    value={email}
+                    onChangeText={setEmail}
+                    keyboardType="email-address"
+                    validationRule={(text) => text.includes('@')}
+                    errorMessage="Correo inválido"
+                />
 
-<CustomInput 
-                label="Contraseña"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                validationRule={(text)=>text.includes('@')}
-                errorMessage ="Correo invalido"
-                secureTextEntry={true}
-            />
+                <CustomInput 
+                    label="Contraseña"
+                    value={password}  // Ahora usa el estado correcto
+                    onChangeText={setPassword}  // También usa la función correcta
+                    secureTextEntry={true}  // Se manejará dentro de CustomInput
+                />
            </View>
         </View>
-
-    );
+    )
 }
+
 
 const styles = StyleSheet.create({
     container: {
