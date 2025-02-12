@@ -7,6 +7,5 @@ export default function RootLayout() {
         <AuthProvider>
             <Stack />
         </AuthProvider>
-        
     )
 }
